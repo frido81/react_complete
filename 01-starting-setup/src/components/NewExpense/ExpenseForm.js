@@ -15,24 +15,24 @@ function ExpenseForm() {
     })
 
     function titleChangeHandler(event) {
-        // setEnteredTitle(event.target.value);
-        setUserInput({
-            enteredTitle: event.target.value,
-        })
+        setEnteredTitle(event.target.value);
+        // setUserInput({
+        // enteredTitle: event.target.value,
+        // })
     }
 
     function amountChangeHandler(event) {
-        // setAmount(event.target.value);
-        setUserInput({
-            enteredAmount: event.target.value,
-        })
+        setAmount(event.target.value);
+        // setUserInput({
+        // enteredAmount: event.target.value,
+        // })
     }
 
     function dateChangeHandler(event) {
-        // setDate(event.target.value);
-        setUserInput({
-            enteredDate: event.target.value,
-        })
+        setDate(event.target.value);
+        // setUserInput({
+        // enteredDate: event.target.value,
+        // })
 
     }
     return <form>
