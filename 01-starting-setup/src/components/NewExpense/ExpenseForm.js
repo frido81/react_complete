@@ -44,9 +44,14 @@ function ExpenseForm(props) {
     //         setEnteredAmount(value);
     //     }
 
+    function cancelHandler(event) {
+        console.log("Cancel form");
+
+    }
     function submitHandler(event) {
 
         event.preventDefault();
+        console.log(event.target);
 
         const expenseData = {
             title: enteredTitle,
@@ -79,6 +84,7 @@ function ExpenseForm(props) {
             </div>
         </div>
         <div className="new-expense__actions">
+            <button onClick={cancelHandler} >Cancel</button>
             <button type="submit" >Add expense</button>
         </div>
     </form>
