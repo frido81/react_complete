@@ -1,8 +1,17 @@
-// function greet(userName, message) {
-//     console.log("Hello!", userName, message);
-// }
 
+// import { apiKey } from "./util.js"
 
+// import apiKey from "./util.js"
+//import * as util from "./util.js"
+import { apiKey as akey } from "./util.js"
+
+function greet(userName, message) {
+    console.log("Hello!", userName, message);
+}
+
+// greet("Frido", util.apiKey)
+// greet("Frido the default is known under", util.default)
+greet("Frido the default is known under", akey)
 // const user = {
 //     name: "Max",
 //     age: 34,
@@ -63,4 +72,4 @@
 
 // console.log(extendedUser);
 
-setTimeout(() => { console.log("timed out") }, 2000)
+// setTimeout(() => { console.log("timed out") }, 2000)
