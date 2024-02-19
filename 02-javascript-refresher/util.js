@@ -6,3 +6,6 @@ export function greet(userName, message) {
     console.log("Hello!", userName, message);
 }
 
+export function createHello(userName, message = "world") {
+    return `Hello! ${userName} ${message}`;
+}
