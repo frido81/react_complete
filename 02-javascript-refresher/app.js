@@ -2,12 +2,9 @@
 // import { apiKey } from "./util.js"
 
 // import apiKey from "./util.js"
-//import * as util from "./util.js"
+import * as util from "./util.js"
 import { apiKey as akey } from "./util.js"
-
-function greet(userName, message) {
-    console.log("Hello!", userName, message);
-}
+import { greet } from "./util.js"
 
 // greet("Frido", util.apiKey)
 // greet("Frido the default is known under", util.default)

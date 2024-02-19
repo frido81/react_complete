@@ -55,3 +55,32 @@ https://notes.zolder.org/books/Programming/Javascript/jsdg.html
 -   util.apiKey or util.default
 -   import { apiKey as akey } from "./util.js"
 -   see [written examples](app.js)
+
+## 16 - Revisiting Variables & Values
+
+-   more check [example](variables-and-values.js)
+-   all about data & values
+-   Strings: text, single/double, backticks
+-   Number: positive or negative, float or integer
+-   Boolean: True, False
+-   Null & Undefined:
+    -   There is no value: undfined default if no value was assigned,
+    -   null explicitly assigned by developer
+-   Object
+-   variables are named containers that store a value
+-   used for reuseability and readability
+-   Variables are named with `let`
+
+    1. Must not contain whitespace or special chars
+    2. May contain number but must not start with number
+    3. Must not clash with reserved keywords
+    4. should use camelCasing: userName, isCorrect
+    5. should describe what the "thing" it idenitifies contains or does:
+        - Recommended: userName, isCorrect, loadData
+        - Uncommon: userDataPoint, correctness, dataLoader
+
+-   const can not be redeclared, is best to use as default
+
+## 17 - Revisiting operators
+
+-   more check [example](operators.js)
