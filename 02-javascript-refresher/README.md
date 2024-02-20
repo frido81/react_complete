@@ -222,3 +222,21 @@ storeOrder2({id: 5, currency: "USD", amount: 15.99});
 ## 30 - Reference vs Primitive values
 
 -   check [example](reference-vs-primitive.js)
+
+## 31 - Next-gen JavaScript - Summary
+
+-   let/const
+-   arrow functions
+-   export/imports
+-   classes
+-   spread & rest
+-   destructuring
+
+## 32 - JS array functions
+
+-   check [example](arrays-advanced.js)
+
+## 33 - Module resources
+
+-   https://codesandbox.io/s/javascript-refresher-j56djd
+-   https://github.com/academind/react-complete-guide-code/tree/02-js-refresher
