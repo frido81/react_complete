@@ -44,6 +44,8 @@ fetch("lectures.json")
                 totalTime = 0;
                 console.log(lecture["title"])
                 text.innerHTML += `<h1>${lecture.title}</h1>`;
+
+
             } else {
                 if ("asset" in lecture) {
                     // console.log("     ", lecture["title"], "#", readableTime(lecture.asset.time_estimation))
