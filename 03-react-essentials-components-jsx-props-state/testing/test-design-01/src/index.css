@@ -1,0 +1,15 @@
+* {
+    box-sizing: border-box;
+}
+html {
+    font-family: 'Quicksand', sans-serif;
+    line-height: 1.5;
+    background: #f5efdc;
+    min-height: 80rem;
+}
+
+main {
+    width: 90%;
+    max-width: 50rem;
+    margin: auto;
+}

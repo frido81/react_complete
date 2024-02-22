@@ -1,0 +1,36 @@
+.card {
+    padding: 2rem;
+    border-radius: 10px;
+    background: #ebdbb2;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    margin: 2rem;
+}
+
+.card h2 {
+    text-align: center;
+    font-family: 'Roboto Condensed', sans-serif;
+    margin: 0 0 1.5rem 0;
+    color: #a18aba;
+}
+
+.card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+.card li {
+    border: 1px solid grey;
+    min-width: 12rem;
+    background: #fdfdfd;
+    padding: 0.5rem;
+    padding-left: 2rem;
+    margin: auto;
+    margin-top: 0.5rem;
+    text-align: left;
+}
+.read-the-docs {
+    color: #888;
+}

@@ -72,3 +72,11 @@ npm run dev
 -   sometimes just need it once
 -   somtimes multiple times but with different input data, _PROPS_
 -   can also pass in arrays, numbers etc.
+
+# 44 - Alternative Props Syntaxes
+
+-   ```
+    function CoreConcept(props) {
+    function CoreConceptDestructured({ image, title, description }) {
+    <CoreConcept {...CORE_CONCEPTS[0]} />
+    ```
