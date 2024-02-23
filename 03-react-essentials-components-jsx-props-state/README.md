@@ -80,3 +80,10 @@ npm run dev
     function CoreConceptDestructured({ image, title, description }) {
     <CoreConcept {...CORE_CONCEPTS[0]} />
     ```
+
+# 45 - More syntaxes
+
+-   more syntaxes used for props
+-   whole object, more destructering, default values
+
+-L
