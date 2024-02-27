@@ -66,5 +66,5 @@ body {
     transition: height ease 0.2s;
 }
 .answer_wrapper.open {
-    height: 100px;
+    height: auto;
 }
