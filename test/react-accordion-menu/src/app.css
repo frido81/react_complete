@@ -11,12 +11,20 @@ body {
     color: #444;
 }
 
-.container {
+/* .container {
     max-width: 600px;
     margin: 6rem auto 4rem;
     padding: 0 10px;
-}
+} */
 
+.container {
+    height: 100vh;
+    display: grid;
+    grid:
+        'notebooks  main   pages' auto
+        'statusbar  main   pages' 2rem
+        / 15rem 1fr 15rem;
+}
 .heading {
     font-size: 23px;
     margin-bottom: 20px;
@@ -24,6 +32,7 @@ body {
 }
 
 .accordion {
+    grid-area: notebooks;
     list-style: none;
 }
 

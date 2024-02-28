@@ -1,6 +1,7 @@
 
 
-import { faqs } from "../data";
+import { faqs, faqs2 } from "../data";
+import { notes } from "../notes";
 import AccordionItem from "./AccordionItem";
 
 const Accordion = () => {
@@ -12,13 +13,21 @@ const Accordion = () => {
     //     }
     //     setClicked(index);
     // };
+
+    // for (const notebook in notes) {
+    //     console.log(notebook)
+    // }
+
+    Object.keys(notes).map((note, index) => (console.log(note, index)));
+
+
     return (
         <ul className="accordion">
-            {faqs.map((faq, index) => (
+            {Object.keys(notes).map((note, index) => (
                 <AccordionItem
                     // onToggle={() => handleToggle(index)}
                     // active={clicked === index}
-                    key={index} faq={faq} />
+                    key={index} note={note} sections={notes} />
             ))}
         </ul>
     );

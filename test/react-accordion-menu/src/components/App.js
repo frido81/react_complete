@@ -7,7 +7,6 @@ import Accordion from "./Accordion";
 const App = () => {
     return (
         <div className="container">
-            <Header />
             <Accordion />
         </div>
     )
