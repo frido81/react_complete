@@ -93,3 +93,58 @@ npm run dev
 -   also for style and image files
 
 # 47 - Storing component style files next to components
+
+-   styles can be in seperate files
+-   they are NOT scoped and global
+
+# 48 - Component Composition -: THe special "children" prop
+
+-   props.children refers to text between component tags
+-   `<Modal>text between tags</Modal>`
+-   can also be complex html
+-   can also destructure ({children})
+-   children vs props both valid, personal preference, need
+    to be aware about differences
+
+# 49 - Reacting to events
+
+-   no addeventlistener and direct dom handling
+-   add functions inside component
+-   add `onEvent` as attribute `<button onClick{handleClick}>
+-   no paranthesis
+
+# 50 - Passing functions as values to props
+
+-   can also pass complete function as prop from outside component
+-   common and superimportant pattern
+-   from component no access to outside elements
+
+# 51 - Passing Custom arguments to Event Functions
+
+-   use arrow functions with custom argument
+-   `<TabButton onSelect={() => handleSelect('components')}>Components</TabButton>`
+
+# 52 - How not to update the UI
+
+-   bare variable and update with function
+-   by default components execute only _ONCE_
+-   you have to tell react if a component should be executed again
+
+# 53 - Managing State and using hooks
+
+-   can not use regular variable because react doesn't update
+-   need to tell react with state
+-   with useState
+-   all functions with use are react Hooks
+-   must only be used in component components or in other react hooks
+-   must use on the top level
+-   useState always returns 2 elements
+
+```js
+//   current state value, state update function   = initial state value
+//   may change if component  update the stored value
+//   executes again           & tells react to rexecute the
+//                            functino in which useState was
+//                            called
+let [selectedTopic, setSelectedTopic] = useState('Please click a button');
+```
