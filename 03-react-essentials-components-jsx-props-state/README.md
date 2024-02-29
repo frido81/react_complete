@@ -86,4 +86,10 @@ npm run dev
 -   more syntaxes used for props
 -   whole object, more destructering, default values
 
--L
+# 46 - Best Practice, storing components in Files & using a good project structure
+
+-   components directory
+-   check imports and exports
+-   also for style and image files
+
+# 47 - Storing component style files next to components
