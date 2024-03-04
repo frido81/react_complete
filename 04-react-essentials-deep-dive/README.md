@@ -54,3 +54,7 @@
 -   must start with uppercase character
 -   strings names for built-in html elements, and component functions
     inside {} ({Section})
+
+# 68: Setting default prop values
+
+-   simple with Buttoncomponent="menu"
