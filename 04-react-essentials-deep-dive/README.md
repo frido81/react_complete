@@ -58,3 +58,16 @@
 # 68: Setting default prop values
 
 -   simple with Buttoncomponent="menu"
+
+# 69: Onwards to the Next Project & Advanced concepts
+
+-   Multiple state values
+-   Nested Lists
+-   Array & Object states
+-   Lifting state up
+-   Derived state
+-   Component functions vs normal functions
+
+# 75: Components work in isolation
+
+-   (click) events are only done by
