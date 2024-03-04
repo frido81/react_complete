@@ -2,6 +2,8 @@ import { useState } from 'react';
 
 import { EXAMPLES } from '../data-with-examples.js'
 import TabButton from './TabButton.jsx'
+import Section from './Section.jsx'
+import Tabs from './Tabs.jsx';
 
 export default function Examples() {
     const [selectedTopic, setSelectedTopic] = useState();
@@ -25,18 +27,23 @@ export default function Examples() {
 
     }
 
-
+    // these are called slots, extra jsx content, some extra jsx outside of children (tabContent in this case)
     return (
-        <section id="examples">
-            <h2>Time to get started!</h2>
-            <h2>Examples</h2>
-            <menu>
-                <TabButton isSelected={selectedTopic === 'components'} onSelect={() => handleSelect('components')}>Components</TabButton>
-                <TabButton isSelected={selectedTopic === 'jsx'} onSelect={() => handleSelect('jsx')}>JSX</TabButton>
-                <TabButton isSelected={selectedTopic === 'props'} onSelect={() => handleSelect('props')}>Props</TabButton>
-                <TabButton isSelected={selectedTopic === 'state'} onSelect={() => handleSelect('state')}>State</TabButton>
-            </menu>
-            {tabContent}
-        </section>
+        <Section id="examples">
+            <Tabs
+                buttons={
+                    <>
+                        <TabButton isSelected={selectedTopic === 'components'} onClick={() => handleSelect('components')}>Components</TabButton>
+                        <TabButton isSelected={selectedTopic === 'jsx'} onClick={() => handleSelect('jsx')}>JSX</TabButton>
+                        <TabButton isSelected={selectedTopic === 'props'} onClick={() => handleSelect('props')}>Props</TabButton>
+                        <TabButton isSelected={selectedTopic === 'state'} onClick={() => handleSelect('state')}>State</TabButton>
+                    </>
+
+                }
+                ButtonsContainer="menu"
+            >
+                {tabContent}
+            </Tabs>
+        </Section>
     )
 }
