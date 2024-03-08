@@ -71,3 +71,15 @@
 # 75: Components work in isolation
 
 -   (click) events are only done by
+
+# 77: Updating State Based on old state
+
+-   "setEditing (!isEditing)" doesn't work with state like this
+-   instead pass a function to your state updating function, this function
+    will automatically called by react and will reccive the guaranteed latest
+    state value
+
+# 78: User Input & Two way binding
+
+-   two way binding: handle onchange, set variable with called function, show with value
+    in input element

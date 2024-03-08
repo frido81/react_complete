@@ -1,29 +1,41 @@
 import { useState } from 'react'
 
-export default function Player({ name, symbol }) {
-
+export default function Player({ initialName, symbol }) {
+    const [playerName, setPlayerName] = useState(initialName);
     const [isEditing, setIsEditing] = useState(false);
 
     function toggleIsEditing() {
-        if (isEditing) {
-            setIsEditing(false);
-        } else {
-            setIsEditing(true);
-        }
+        // if (isEditing) {
+        //     setIsEditing(!isEditing); these are scheduled
+        //     setIsEditing(!isEditing); isEditing is initially false, second time as well
+        // } else {
+        //     setIsEditing(true);
+        // }
+        setIsEditing((editing) => !editing);
     }
 
-    let playerName = <span className="player-name">{name}</span>
-    if (isEditing) {
-        playerName = <input type="text" />
+    function handleChange() {
+        setPlayerName();
     }
+
+    function handleChange(event) {
+        console.log(event);
+        setPlayerName(event.target.value);
+    }
+    let editablePlayerName = <span className="player-name">{playerName}</span>
+
+    if (isEditing) {
+        editablePlayerName = <input type="text" value={playerName} onChange={handleChange} />
+    }
+
 
     return (
         <li>
             <span className="player">
-                {playerName}
+                {editablePlayerName}
                 <span className="player-symbol">{symbol}</span>
             </span>
-            <button onClick={toggleIsEditing}>Edit</button>
+            <button onClick={toggleIsEditing}>{isEditing ? "Save" : "Edit"}</button>
         </li>
 
     )
