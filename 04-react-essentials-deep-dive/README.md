@@ -83,3 +83,9 @@
 
 -   two way binding: handle onchange, set variable with called function, show with value
     in input element
+
+# 81: Lifting State Up
+
+-   sometimes state needs to be lifted up to closess ancestor component that has access to
+    all components that needs to work with that state.
+-   Ancestor manages state of both Child1, Child2
