@@ -1,38 +1,44 @@
 import { useState } from 'react';
 
 import UserInput from './components/UserInput.jsx'
-import Results from './components/Results.jsx'
+import Result from './components/Result.jsx'
 
 import { calculateInvestmentResults } from './util/investment.js'
+
+const INITIAL_INPUTS = {
+    initialInvestment: 15000,
+    annualInvestment: 900,
+    expectedReturn: 5.6,
+    duration: 10
+}
+
 function App() {
 
     //   initialInvestment,
-    const [initialInvestment, setInitialInvestment] = useState(1000);
-    const [anualInvestment, setAnualInvestment] = useState(1500);
-    const [expectedReturn, setExpectedReturn] = useState(5);
-    const [duration, setDuration] = useState(10);
-    const [result, setResult] = useState([]);
+    const [initialInvestment, setInitialInvestment] = useState(INITIAL_INPUTS.initialInvestment);
+    const [annualInvestment, setAnnualInvestment] = useState(INITIAL_INPUTS.annualInvestment);
+    const [expectedReturn, setExpectedReturn] = useState(INITIAL_INPUTS.expectedReturn);
+    const [duration, setDuration] = useState(INITIAL_INPUTS.duration);
+    const [result, setResult] = useState(calculateInvestmentResults(INITIAL_INPUTS));
 
     function inputChanged(label, value) {
         console.log(label, 'changed', value)
-        let result = []
         if (label === "initial_investment") {
             setInitialInvestment(value)
-            result = calculateInvestmentResults({ initialInvestment: Number(value), annualInvestment: anualInvestment, expectedReturn: expectedReturn, duration: duration })
+            setResult(calculateInvestmentResults({ initialInvestment: Number(value), annualInvestment: annualInvestment, expectedReturn: expectedReturn, duration: duration }))
         }
-        if (label === "anual_investment") {
-            setAnualInvestment(value)
-            result = calculateInvestmentResults({ initialInvestment: initialInvestment, annualInvestment: Number(value), expectedReturn: expectedReturn, duration: duration })
+        if (label === "annual_investment") {
+            setAnnualInvestment(value)
+            setResult(calculateInvestmentResults({ initialInvestment: initialInvestment, annualInvestment: Number(value), expectedReturn: expectedReturn, duration: duration }))
         }
         if (label === "expected_return") {
             setExpectedReturn(value)
-            result = calculateInvestmentResults({ initialInvestment: initialInvestment, annualInvestment: anualInvestment, expectedReturn: Number(value), duration: duration })
+            setResult(calculateInvestmentResults({ initialInvestment: initialInvestment, annualInvestment: annualInvestment, expectedReturn: Number(value), duration: duration }))
         }
         if (label === "duration") {
             setDuration(value)
-            result = calculateInvestmentResults({ initialInvestment: initialInvestment, annualInvestment: anualInvestment, expectedReturn: expectedReturn, duration: Number(value) })
+            setResult(calculateInvestmentResults({ initialInvestment: initialInvestment, annualInvestment: annualInvestment, expectedReturn: expectedReturn, duration: Number(value) }));
         }
-        setResult(result)
     }
 
     return (
@@ -46,12 +52,12 @@ function App() {
                     </div>
                     <div>
 
-                        <UserInput label="anual_investment" description="Anual Investment" initialValue={anualInvestment} inputChanged={inputChanged} />
+                        <UserInput label="annual_investment" description="Annual Investment" initialValue={annualInvestment} inputChanged={inputChanged} />
                         <UserInput label="duration" description="Duration" initialValue={duration} inputChanged={inputChanged} />
                     </div>
                 </div>
             </div>
-            <Results result={result} />
+            <Result result={result} />
         </main>
     )
 }
