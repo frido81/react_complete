@@ -83,9 +83,14 @@ const ControlContainer = styled.div`
 
 # 116 Creating Reusable Components & Component Combinations
 
-Introducing Tailwind CSS For React App Styling
-Adding & Using Tailwind CSS In A React Project
-Tailwind: Media Queries & Pseudo Selectors
+# 117 Introducing Tailwind CSS For React App Styling
+
+# 118 Adding & Using Tailwind CSS In A React Project
+
+# 119 Tailwind: Media Queries & Pseudo Selectors
+
+-   [ ] omzetten css naar tailwind voor custominput component
+
 Dynamic & Conditional Styling with Tailwind
 Migrating The Demo App to Tailwind CSS
 Tailwind CSS: Pros & Cons
