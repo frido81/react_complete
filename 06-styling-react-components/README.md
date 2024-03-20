@@ -91,6 +91,23 @@ const ControlContainer = styled.div`
 
 -   [ ] omzetten css naar tailwind voor custominput component
 
-Dynamic & Conditional Styling with Tailwind
-Migrating The Demo App to Tailwind CSS
-Tailwind CSS: Pros & Cons
+# 120 Dynamic & Conditional Styling with Tailwind
+
+# 121 Migrating The Demo App to Tailwind CSS
+
+# 122 Tailwind CSS: Pros & Cons
+
+advantages:
+
+-   You don't need to know (a lot about) CSS
+-   Rapid developement
+-   No Style clashes between components since you
+    don't define any CSS rules
+-   Highly configuratable & extensible
+
+disadvantages:
+
+-   relatively long className values
+-   any style changes require editing JSX
+-   you end up with many relatively small "wrapper"
+    components OR lots of copy & pasting

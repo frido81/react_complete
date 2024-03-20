@@ -18,8 +18,8 @@ import { styled } from 'styled-components';
 export default function Button({ children, ...props }) {
     return (
         <button
-            {...props}
-            className="py-2 px-4 font-semibold uppercase rounded border-stone-900 bg-amber-400 hover:bg-amber-500">
+            className="px-4 py-2 font-semibold uppercase text-sm rounded text-stone-900 bg-amber-400 hover:bg-amber-500"
+            {...props}>
             {children}
         </button>
     );

@@ -1,0 +1,13 @@
+body {
+  border: 1px dashed red;
+  font-family: sans-serif;
+  margin: 0;
+  padding: 2rem;
+  background-color: #2d2c2c;
+  color: #959090;
+  text-align: center;
+}
+
+#root {
+  margin: auto;
+}
