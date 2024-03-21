@@ -1,10 +1,10 @@
 # 129 Module Introduction & Starting Project
 
-- Not need in all apps, advanced buy simplify and sometimes needed
-- Accessing DOM elements to Refs
-- Manage values with refs that shouldn't be state
-- Exposing API functions from components
-- Detaching DOM rendering from JSX structure with Portals
+-   Not need in all apps, advanced buy simplify and sometimes needed
+-   Accessing DOM elements to Refs
+-   Manage values with refs that shouldn't be state
+-   Exposing API functions from components
+-   Detaching DOM rendering from JSX structure with Portals
 
 # 130 Repetition: Managing User Input with State (Two-Way-Binding)
 
@@ -15,6 +15,18 @@
 # 133 Manipulating the DOM via Refs
 
 # 134 Refs vs State Values
+
+## refs:
+
+-   Whenever a ref changes, component does not re-render
+-   Can be used to gain direct DOM element access
+
+## state
+
+-   Whenever a state changes, component does re-render
+-   should be used for values that are directly reflected in the UI
+-   Should not be used for "behind the scenes" values that have no
+    direct UI impact.
 
 # 135 Adding Challenges to the Demo Project
 
