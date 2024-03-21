@@ -2,6 +2,10 @@ import Player from './components/Player.jsx';
 import TimerChallange from './components/TimerChallenge.jsx';
 
 function App() {
+    function handleStart() {
+        setTimeout(() => {}, 1000);
+    }
+
     return (
         <>
             <Player />
