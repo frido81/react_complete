@@ -18,6 +18,15 @@ export default function Workout({ title, description, time, onComplete }) {
     }, 1000);
   }
 
+  /*
+    function handleStartWorkout() {
+    // Todo: Start timer
+        timer.current = setInterval(() => {
+      setStopWatch((stopWatch) => stopWatch - 1000);
+    }, 1000);
+  }
+  */
+
   function handleStopWorkout() {
     // Todo: Stop timer
     clearInterval(timer.current);
