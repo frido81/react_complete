@@ -12,12 +12,16 @@ npm create vite@latest dynamic_styles -- --template react
 ### deploy to path instead of full domain
 
 ```js
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: "/workout-refs",
-  plugins: [react()],
+    base: '/workout-refs',
+    plugins: [react()],
 });
 ```
+
+### npm create
+
+npm create vite@latest react-rnd -- --template react
