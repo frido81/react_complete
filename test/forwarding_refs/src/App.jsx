@@ -11,11 +11,6 @@ export default function App() {
     const emailInput = useRef();
 
     function handleSaveData() {
-        userData.name = 'TODO: Set to actual entered value';
-        userData.email = 'TODO: Set to actual entered value';
-
-        console.log(nameInput.current.value);
-
         userData.name = nameInput.current.value;
         userData.email = emailInput.current.value;
 
