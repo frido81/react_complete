@@ -40,7 +40,9 @@ function App() {
                     <h2 className="mb-8 font-bold uppercase md:text-xl text-stone-200">YOUR PROJECTS</h2>
                     <CreateProjectButton onClick={toggleCreateProject} label="+ Add Project" />
                     <ul className="mt-8">
-                        <li className="text-stone-50 mx-4 my-2">inactive</li>
+                        {projects.map((project) => (
+                            <li className="text-stone-50 mx-4 my-2">{project.title}</li>
+                        ))}
                     </ul>
                 </aside>
 
