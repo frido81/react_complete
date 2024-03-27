@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const INITIAL_PROJECT = '[]';
+import Project from './components/Project.jsx';
 
 function CreateProjectButton({ label, ...props }) {
     return (
@@ -10,22 +10,27 @@ function CreateProjectButton({ label, ...props }) {
     );
 }
 
-function InputProject() {
-    return <h2>Input project screen</h2>;
-}
+const DEFAULT_PROJECT = {
+    id: 0,
+    title: '',
+    description: '',
+    due: '',
+    tasks: [],
+};
+
 function App() {
-    const [projects, setProjects] = useState([
-        {
-            id: 0,
-            name: '',
-            due: 'date',
-            tasks: [1, 2, 3],
-        },
-    ]);
+    console.log(DEFAULT_PROJECT);
+    const [projects, setProjects] = useState([{}]);
     const [createProject, setCreateProject] = useState(false);
 
     function toggleCreateProject() {
         setCreateProject((createProject) => (createProject ? setCreateProject(false) : setCreateProject(true)));
+    }
+
+    function saveProject(project) {
+        setProjects((prevProjects) => {
+            return [...prevProjects, project];
+        });
     }
 
     return (
@@ -34,6 +39,9 @@ function App() {
                 <aside className="w-1/3 px-8 py-16 bg-stone-900 text-stone-50 md:w-72 rounded-r-xl">
                     <h2 className="mb-8 font-bold uppercase md:text-xl text-stone-200">YOUR PROJECTS</h2>
                     <CreateProjectButton onClick={toggleCreateProject} label="+ Add Project" />
+                    <ul className="mt-8">
+                        <li className="text-stone-50 mx-4 my-2">inactive</li>
+                    </ul>
                 </aside>
 
                 <div className="flex flex-col items-center gap-1 my-4 mx-auto">
@@ -43,7 +51,7 @@ function App() {
                     {createProject ? (
                         <CreateProjectButton onClick={toggleCreateProject} label="+ Create new project" />
                     ) : (
-                        <InputProject />
+                        <Project saveHandler={saveProject} project={DEFAULT_PROJECT} />
                     )}
                 </div>
             </main>
