@@ -16,6 +16,7 @@ export default function NewProject({ project, saveHandler }) {
             title: title.current.value,
             description: description.current.value,
             due: due.current.value,
+            tasks: [],
         });
     }
 

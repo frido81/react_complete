@@ -46,8 +46,25 @@ function App() {
         setSelectedProject()
     }
 
+    function taskHandler(id, command, task) {
+        console.log("adding task", id, command, task)
+        let index=projects.findIndex(o => o.id === id)
+        if (command === "add") {
+            projects[index].tasks.push(task);
+            console.log(projects[index]);
+            setSelectedProject((prevProject) => {
+                    return projects[index]
+                }
+            )
+            setProjects(projects);
+        }
+
+
+    }
+
+
     if (selectedProject) {
-        mainWindow = <ShowProject project={selectedProject}/>;
+        mainWindow = <ShowProject project={selectedProject} allprojects={projects} taskHandler={taskHandler}/>;
     } else {
         mainWindow =
         <>
