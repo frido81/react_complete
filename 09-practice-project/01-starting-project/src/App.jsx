@@ -23,14 +23,11 @@ function App() {
     const [projects, setProjects] = useState([{}]);
     const [createProject, setCreateProject] = useState(false);
 
-    function toggleCreateProject() {
-        setCreateProject((createProject) => (createProject ? setCreateProject(false) : setCreateProject(true)));
-    }
-
     function saveProject(project) {
         setProjects((prevProjects) => {
             return [...prevProjects, project];
         });
+        setCreateProject(false);
     }
 
     return (
@@ -38,7 +35,7 @@ function App() {
             <main className="h-screen my-8 flex gap-8">
                 <aside className="w-1/3 px-8 py-16 bg-stone-900 text-stone-50 md:w-72 rounded-r-xl">
                     <h2 className="mb-8 font-bold uppercase md:text-xl text-stone-200">YOUR PROJECTS</h2>
-                    <CreateProjectButton onClick={toggleCreateProject} label="+ Add Project" />
+                    <CreateProjectButton onClick={() => {setCreateProject(true)}} label="+ Add Project" />
                     <ul className="mt-8">
                         {projects.map((project, index) => (
                             <li key={index} className="text-stone-50 mx-4 my-2">
@@ -53,9 +50,9 @@ function App() {
                     <img className="w-16 h-16 object-contain mx-auto" src="logo.png"></img>
                     <p className="text-stone-700 mb-4">Select a project or get started with a new project</p>
                     {createProject ? (
-                        <CreateProjectButton onClick={toggleCreateProject} label="+ Create new project" />
-                    ) : (
                         <Project saveHandler={saveProject} project={DEFAULT_PROJECT} />
+                    ) : (
+                        <CreateProjectButton onClick={()=> {setCreateProject(true)}} label="+ Create new project" />
                     )}
                 </div>
             </main>
