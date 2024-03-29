@@ -75,7 +75,7 @@ function App() {
                     </ul>
                 </aside>
 
-                <div className="flex flex-col items-center gap-1 my-4 mx-auto">
+                <div className="flex flex-col basis-2/3 items-center gap-1 my-4 p-4">
                     {mainWindow}
                </div>
             </main>
