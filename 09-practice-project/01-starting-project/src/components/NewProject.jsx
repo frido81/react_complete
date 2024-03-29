@@ -30,7 +30,6 @@ export default function NewProject({ project, saveHandler }) {
                 />
             </div>
             <div className="flex flex-col">
-                <h2>Project Component: action={project.id}</h2>
 
                 <div className="flex flex-col">
                     <Input ref={title} label="title" type="text" defaultValue={project.title} />

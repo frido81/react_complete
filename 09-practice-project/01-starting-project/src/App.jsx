@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
-
-import Project from './components/NewProject.jsx';
+import NewProject from './components/NewProject.jsx';
+import ShowProject from './components/ShowProject.jsx';
 
 function CreateProjectButton({ label, ...props }) {
     return (
@@ -9,6 +9,17 @@ function CreateProjectButton({ label, ...props }) {
             {label}
         </button>
     );
+}
+
+function DisplaySelectProject() {
+    return (
+        <>
+            <h2 className="text-xl font-bold text-stone-700 my-4">No Project Selected</h2>
+            <img className="w-16 h-16 object-contain mx-auto" src="logo.png"></img>
+            <p className="text-stone-700 mb-4">Select a project or get started with a new project</p>
+        </>
+    )
+
 }
 
 const DEFAULT_PROJECT = {
@@ -19,17 +30,34 @@ const DEFAULT_PROJECT = {
     tasks: [],
 };
 
+
 function App() {
-    console.log(DEFAULT_PROJECT);
     const [projects, setProjects] = useState([{}]);
     const [createProject, setCreateProject] = useState(false);
     const [selectedProject, setSelectedProject] = useState();
+
+    let mainWindow = "";
 
     function saveProject(project) {
         setProjects((prevProjects) => {
             return [...prevProjects, project];
         });
         setCreateProject(false);
+        setSelectedProject()
+    }
+
+    if (selectedProject) {
+        mainWindow = <ShowProject project={selectedProject}/>;
+    } else {
+        mainWindow =
+        <>
+            <DisplaySelectProject debug={selectedProject}/>
+            <CreateProjectButton onClick={()=> {setCreateProject(true)}} label="+ Create new project" />
+        </>
+    }
+
+    if (createProject) {
+        mainWindow = <NewProject saveHandler={saveProject} project={DEFAULT_PROJECT} />;
     }
 
     return (
@@ -39,8 +67,8 @@ function App() {
                     <h2 className="mb-8 font-bold uppercase md:text-xl text-stone-200">YOUR PROJECTS</h2>
                     <CreateProjectButton onClick={() => {setCreateProject(true)}} label="+ Add Project" />
                     <ul className="mt-8">
-                        {projects.map((project, index) => (
-                            <li key={project.id} onClick={() => {setSelectedProject(project.id)}}className="text-stone-50 mx-4 my-2 underline cursor-pointer">
+                        {projects.map((project) => (
+                            <li key={project.id} onClick={() => {setSelectedProject(project)}}className="text-stone-50 mx-4 my-2 underline cursor-pointer">
                                 {project.title}
                             </li>
                         ))}
@@ -48,15 +76,8 @@ function App() {
                 </aside>
 
                 <div className="flex flex-col items-center gap-1 my-4 mx-auto">
-                    <h2 className="text-xl font-bold text-stone-700 my-4">No Project Selected</h2>
-                    <img className="w-16 h-16 object-contain mx-auto" src="logo.png"></img>
-                    <p className="text-stone-700 mb-4">Select a project or get started with a new project (SelectedProject={selectedProject})</p>
-                    {createProject ? (
-                        <Project saveHandler={saveProject} project={DEFAULT_PROJECT} />
-                    ) : (
-                        <CreateProjectButton onClick={()=> {setCreateProject(true)}} label="+ Create new project" />
-                    )}
-                </div>
+                    {mainWindow}
+               </div>
             </main>
         </>
     );
