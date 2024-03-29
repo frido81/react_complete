@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
-import Project from './components/Project.jsx';
+
+import Project from './components/NewProject.jsx';
 
 function CreateProjectButton({ label, ...props }) {
     return (
@@ -22,6 +23,7 @@ function App() {
     console.log(DEFAULT_PROJECT);
     const [projects, setProjects] = useState([{}]);
     const [createProject, setCreateProject] = useState(false);
+    const [selectedProject, setSelectedProject] = useState();
 
     function saveProject(project) {
         setProjects((prevProjects) => {
@@ -38,7 +40,7 @@ function App() {
                     <CreateProjectButton onClick={() => {setCreateProject(true)}} label="+ Add Project" />
                     <ul className="mt-8">
                         {projects.map((project, index) => (
-                            <li key={index} className="text-stone-50 mx-4 my-2">
+                            <li key={project.id} onClick={() => {setSelectedProject(project.id)}}className="text-stone-50 mx-4 my-2 underline cursor-pointer">
                                 {project.title}
                             </li>
                         ))}
@@ -48,7 +50,7 @@ function App() {
                 <div className="flex flex-col items-center gap-1 my-4 mx-auto">
                     <h2 className="text-xl font-bold text-stone-700 my-4">No Project Selected</h2>
                     <img className="w-16 h-16 object-contain mx-auto" src="logo.png"></img>
-                    <p className="text-stone-700 mb-4">Select a project or get started with a new project</p>
+                    <p className="text-stone-700 mb-4">Select a project or get started with a new project (SelectedProject={selectedProject})</p>
                     {createProject ? (
                         <Project saveHandler={saveProject} project={DEFAULT_PROJECT} />
                     ) : (

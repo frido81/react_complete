@@ -3,13 +3,16 @@ import Input from './Input.jsx';
 
 import { useState, useRef } from 'react';
 
-export default function Project({ project, saveHandler }) {
+import { v4 as uuidv4 } from 'uuid';
+
+export default function NewProject({ project, saveHandler }) {
     const title = useRef();
     const description = useRef();
     const due = useRef();
 
     function testRef() {
         saveHandler({
+            id: uuidv4(),
             title: title.current.value,
             description: description.current.value,
             due: due.current.value,
