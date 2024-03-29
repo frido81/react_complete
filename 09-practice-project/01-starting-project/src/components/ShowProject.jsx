@@ -35,8 +35,8 @@ export default function ShowProject({project, taskHandler}) {
 
             {tasks.map((task, index) => (
 
-            <div className="flex justify-between">
-                <li key={index} className="flex my-4">{index}-{task}</li>
+            <div key={index} className="flex justify-between">
+                <li className="flex my-4">{index}-{task}</li>
                 <button className="text-stone-700 hover:text-red-500">Clear</button>
             </div>
 
