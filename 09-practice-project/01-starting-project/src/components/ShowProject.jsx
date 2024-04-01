@@ -2,16 +2,17 @@ import { useRef, useState } from 'react';
 
 export default function ShowProject({project, taskHandler}) {
 
-    const [tasks, setTasks] = useState([1,2,3])
+    // const [tasks, setTasks] = useState([1,2,3])
 
     const newTask = useRef();
 
 
     function addTask() {
-        tasks.push(newTask.current.value)
-        setTasks(tasks);
-        console.log("tasks", tasks)
-        // taskHandler(project.id, "add", newTask.current.value)
+        // setTasks(
+            // [...tasks,
+            // newTask.current.value]);
+        // console.log("tasks", tasks)
+        taskHandler(project.id, "add", newTask.current.value)
     }
 
     return (
@@ -33,7 +34,7 @@ export default function ShowProject({project, taskHandler}) {
 
         <ul className="p-4 mt-8 rounded-md bg-stone-100">
 
-            {tasks.map((task, index) => (
+            {project.tasks.map((task, index) => (
 
             <div key={index} className="flex justify-between">
                 <li className="flex my-4">{index}-{task}</li>

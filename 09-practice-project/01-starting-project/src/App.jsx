@@ -48,15 +48,33 @@ function App() {
 
     function taskHandler(id, command, task) {
         console.log("adding task", id, command, task)
-        let index=projects.findIndex(o => o.id === id)
+        // let index=projects.findIndex(o => o.id === id)
+           // console.log(projects[index]);
+            // setSelectedProject((prevProject) => {
+            //         return projects[index]
+            //     }
+            // )
         if (command === "add") {
-            projects[index].tasks.push(task);
-            console.log(projects[index]);
-            setSelectedProject((prevProject) => {
-                    return projects[index]
+            setProjects(
+            projects.map((project, index)=> {
+                if (project.id===id) {
+                    console.log("found project", project)
+                    return {
+                        id: project.id,
+                        title: project.title,
+                        description: project.description,
+                        due: project.title,
+                        tasks: [
+                            ...project.tasks,
+                            task
+                        ]
+                    }
+                } else {
+                    return project
                 }
-            )
-            setProjects(projects);
+
+            })
+            );
         }
 
 
