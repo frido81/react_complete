@@ -13,7 +13,7 @@ export default function NewProject({ onAdd, onCancel }) {
   function handleSave() {
     const enteredTitle = title.current.value;
     const enteredDescription = description.current.value;
-    const enteredDueDate = dueDate.current.valueb;
+    const enteredDueDate = dueDate.current.value;
 
     if (
       enteredTitle.trim() === "" ||
@@ -27,7 +27,7 @@ export default function NewProject({ onAdd, onCancel }) {
     onAdd({
       title: enteredTitle,
       description: enteredDescription,
-      due: enteredDueDate,
+      dueDate: enteredDueDate,
     });
 
     //...validation
