@@ -7,6 +7,9 @@ Managing complex state with _Reducers_
 
 # Understanding Prop Drilling & Project Overview
 
+Prop drilling: passing shared data through multiple component
+even though don't directly need data
+
 # Prop Drilling: Component Composition as a Solution
 
 # Introducing the Context API
