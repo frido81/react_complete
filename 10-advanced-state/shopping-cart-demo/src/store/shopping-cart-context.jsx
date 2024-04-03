@@ -1,7 +1,13 @@
-import { useState } from "react";
+import { useState, createContext } from "react";
 import { DUMMY_PRODUCTS } from "../dummy-products.js";
 
-export default function CartContextProvider(provider) {
+export const CartContext = createContext({
+  items: [],
+  addItemToCart: () => {},
+  updateItemQuantity: () => {},
+});
+
+export default function CartContextProvider({ children }) {
   const [shoppingCart, setShoppingCart] = useState({
     items: [],
   });
