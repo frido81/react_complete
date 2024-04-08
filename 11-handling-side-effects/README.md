@@ -1,5 +1,10 @@
 # Handling Side Effects & Working with the useEffect() Hook
 
+- keeping the UI synchronized
+- what are sideeffects
+- effects & dependencies
+- when not to use useeffect
+
 # Module Introduction & Starting Project
 
 # What's a "Side Effect"? A Thorough Example
@@ -7,6 +12,8 @@
 # A Potential Problem with Side Effects: An Infinite Loop
 
 # Using useEffect for Handling (Some) Side Effects
+
+useEffect is triggered after component execution
 
 # Not All Side Effects Need useEffect
 
