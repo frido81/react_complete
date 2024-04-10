@@ -1,27 +1,9 @@
-npm create vite@latest dynamic_styles -- --template react
+# Description
 
-## Nice
+Examples, notes and exercises for "React - The Complete Guide 2024" Udemy
+course by Maximilian Schwarzmüller
 
-### Ternary short form
+# Links
 
-```jsx
-            <h2>Welcome {enteredPlayerName ? enteredPlyaerName 'unknown entity'}</h2>
-            <h2>Welcome {enteredPlayerName ?? 'unknown entity'}</h2>
-```
-
-### deploy to path instead of full domain
-
-```js
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
-
-// https://vitejs.dev/config/
-export default defineConfig({
-    base: '/workout-refs',
-    plugins: [react()],
-});
-```
-
-### npm create
-
-npm create vite@latest react-rnd -- --template react
+[udemy course](https://www.udemy.com/course/react-the-complete-guide-incl-redux/?couponCode=ST8MT40924)
+[original repo](https://github.com/academind/react-complete-guide-course-resources)
