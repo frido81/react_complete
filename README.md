@@ -7,3 +7,5 @@ course by Maximilian Schwarzmüller
 
 [udemy course](https://www.udemy.com/course/react-the-complete-guide-incl-redux/?couponCode=ST8MT40924)
 [original repo](https://github.com/academind/react-complete-guide-course-resources)
+
+
