@@ -9,4 +9,3 @@ course by Maximilian Schwarzmüller
 [original repo](https://github.com/academind/react-complete-guide-course-resources)
 
 # New section
-
